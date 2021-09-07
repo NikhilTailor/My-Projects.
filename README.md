@@ -1,5 +1,6 @@
 # My-Projects.
 Its my first repository and here I will upload my projects.
+My projects details are given below:
 
 1. Periodic Table:- This project I desinged to help the competitive students of JEE and NEET. In this project you have to just give the input of
 atomic number of the particular element and the details of that element will be displayed over your screen. The details which will be shown are =
