@@ -1,0 +1,18 @@
+# Import the library which handles all the activities held on the keyboard...
+from pynput.keyboard import Key, Listener
+
+# Function declared for the key press
+def on_press(key):
+    print(key)
+
+def write_1():
+    pass
+
+# Release key function...
+def on_release(key):
+    if key == Key.esc:
+        return False
+
+# After capturing the keystrokes it print outs the key pressed...
+with Listener(on_press=on_press, on_release=on_release) as l:
+    l.join()
