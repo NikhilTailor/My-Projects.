@@ -1,0 +1,40 @@
+# Importing the libraries for app UI and the Speech Recognition...
+import tkinter as tk
+import speech_recognition as sr
+
+# Class for making speak to test box...
+class MyApp(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Speech to Text")
+        
+        self.label = tk.Label(self, text="Press the button and speak")
+        self.label.pack()
+        
+        self.button = tk.Button(self, text="Speak", command=self.speak)
+        self.button.pack()
+        
+        self.result_label = tk.Label(self, text="")
+        self.result_label.pack()
+
+# Function that recognize the audio and listen to the user's audio...
+    def speak(self):
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            r.adjust_for_ambient_noise(source)  
+            self.label.configure(text="Speak something...")
+            audio = r.listen(source)
+        
+# Exception Handling used whether the audio is not clear or the API is not found...
+        try:
+            text = r.recognize_google(audio)
+            self.result_label.configure(text=text)
+        except sr.UnknownValueError:
+            self.result_label.configure(text="Could not understand audio")
+        except sr.RequestError as e:
+            self.result_label.configure(text="Error: {0}".format(e))
+
+# Calling out the main function...
+if __name__ == "__main__":
+    app = MyApp()
+    app.mainloop()
