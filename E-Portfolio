@@ -39,8 +39,9 @@ HTML Code:
 </body>
 </html>
 
+---------------------------------------------
 
-CSS code:
+Index page CSS code:
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -149,3 +150,57 @@ body{
 }
 
 
+-------------------------------------------------
+
+Contact page:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="shotcut icon" href="Images/contact icon.png">
+</head><img src="Contact me.png" alt="">
+<body>
+    
+</body>
+</html>
+
+---------------------------------------------------
+
+Skillset page:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shotcut icon" href="Images/skills.png">
+    <title>Your Skillset</title>
+</head>
+<body>
+    <img src="your skillset.png" alt="">
+</body>
+</html>
+
+---------------------------------------------------
+
+Certificates page:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shotcut icon" href="Images/certificate icon.png">
+    <title>Your Certificates
+    </title>
+</head>
+<body>
+    <img src="Your earned certificates are secured here....png" alt="">
+</body>
+</html>
