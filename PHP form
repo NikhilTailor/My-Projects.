@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting data of the form</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        
+        .container{
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            flex-direction: column;
+            /* border: 2px solid red; */
+            height:400px;
+            background-color:black;
+            
+        }
+
+        form {
+            display: block;
+            margin: auto;
+            border:2px solid black;
+            
+        }
+
+        input {
+            display: block;
+            margin: auto;
+            width: 524px;
+            padding: 9px 19px;
+            margin: 14px 9px;
+            font-size:1.4rem;
+            border-radius:14px;
+            outline:none;
+        }
+
+        #btn {
+            width: 565px;
+            border-radius:14px;
+        }
+        form h1
+        {
+            color:white;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <?php
+    // connecting ot the server 
+    $nameserver="localhost";
+    $password="";
+    $username="root";
+    $database="namandb";
+    $conn=mysqli_connect($nameserver,$username,$password,$database);
+        echo "successfully connected to the databasse"
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+    
+        $sql="INSERT INTO `contacts` ( `name`, `email`, `password`) VALUES ( '$name', '$email', '$password');";
+        $result=mysqli_query($conn,$sql);
+        if ($result){
+         echo "<br>The item is inserted successfull";
+        }   
+        else{
+        echo "<br>There is some problem in the program".mysqli_error($conn);
+        }
+    }
+   
+    ?>
+
+    <div class="container">
+        
+
+        <form action="/namanphp/23)form.php" method="post">
+            <h1>Fill This form to complet Your regestration</h1>
+            <input type="text" name="name" id="naman " placeholder="enter your name here">
+            <input type="email" name="email" id="email" placeholder="enter your email here">
+            <input type="password" name="password" id="password" placeholder="enter your password here">
+            <input type="submit" value="submit" id="btn">
+
+
+        </form>
+        
+    </div>
+</body>
+
+</html>
